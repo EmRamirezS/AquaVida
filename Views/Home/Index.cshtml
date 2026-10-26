@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<section class="hero-section" id="inicio">
+    <div class="container py-5 py-lg-6">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="eyebrow"><span class="eyebrow-dot"></span> TU HISTORIA COMIENZA EN EL AGUA</span>
+                <h1 class="hero-title mt-3">Descubre todo lo que puedes lograr <span>nadando.</span></h1>
+                <p class="hero-copy mt-3">En AquaVida te acompañamos a ganar confianza, aprender nuevas habilidades y disfrutar cada brazada a tu propio ritmo.</p>
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <a class="btn btn-aqua btn-lg" asp-controller="Inscripciones" asp-action="Crear">Quiero inscribirme <span aria-hidden="true">→</span></a>
+                    <a class="btn btn-outline-aqua btn-lg" href="#programas">Conoce los programas</a>
+                </div>
+                <div class="hero-stats mt-5">
+                    <div><strong>3</strong><span>niveles de aprendizaje</span></div>
+                    <div><strong>100%</strong><span>a tu propio ritmo</span></div>
+                    <div><strong>1er</strong><span>paso: empezar</span></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image-wrap">
+                    <img src="~/images/piscina-aquavida.svg" class="hero-image" alt="Ilustración de una piscina azul con carriles de natación" />
+                    <div class="floating-note"><span class="note-icon">✦</span><div><strong>Tu próximo reto</strong><small>Empieza hoy en AquaVida</small></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding" id="programas">
+    <div class="container">
+        <div class="section-heading text-center mx-auto mb-5">
+            <span class="eyebrow">ENCUENTRA TU NIVEL</span>
+            <h2 class="section-title mt-2">Un programa para cada brazada</h2>
+            <p class="section-copy">No importa si estás comenzando o quieres perfeccionar tu técnica: hay un lugar para ti.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4"><article class="program-card h-100"><div class="program-icon icon-cyan">01</div><h3>Principiante</h3><p>Familiarízate con el agua, trabaja la respiración y aprende los fundamentos con tranquilidad.</p><span class="program-tag">Ideal para empezar</span></article></div>
+            <div class="col-md-4"><article class="program-card h-100"><div class="program-icon icon-blue">02</div><h3>Intermedio</h3><p>Mejora la coordinación, fortalece tu técnica y gana confianza en diferentes estilos.</p><span class="program-tag">Sigue avanzando</span></article></div>
+            <div class="col-md-4"><article class="program-card h-100"><div class="program-icon icon-purple">03</div><h3>Avanzado</h3><p>Perfecciona tus estilos, trabaja la resistencia y establece nuevos objetivos personales.</p><span class="program-tag">Supera tus metas</span></article></div>
+        </div>
+    </div>
+</section>
+
+<section class="schedule-section section-padding" id="horarios">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <span class="eyebrow">ORGANIZA TU SEMANA</span>
+                <h2 class="section-title mt-2">El mejor momento para empezar es ahora.</h2>
+                <p class="section-copy">Selecciona el horario que mejor se adapte a tu rutina en el formulario de inscripción. Los horarios mostrados son opciones de referencia para este proyecto académico.</p>
+                <a class="btn btn-aqua mt-3" asp-controller="Inscripciones" asp-action="Crear">Elegir mi horario →</a>
+            </div>
+            <div class="col-lg-7">
+                <div class="schedule-card">
+                    <div class="schedule-row"><div class="schedule-time">01</div><div class="schedule-info"><strong>Mañana</strong><span>Para comenzar el día con energía</span></div><span class="schedule-pill">6:00 a. m. – 9:00 a. m.</span></div>
+                    <div class="schedule-row"><div class="schedule-time">02</div><div class="schedule-info"><strong>Tarde</strong><span>Una pausa activa en tu día</span></div><span class="schedule-pill">2:00 p. m. – 5:00 p. m.</span></div>
+                    <div class="schedule-row"><div class="schedule-time">03</div><div class="schedule-info"><strong>Fin de semana</strong><span>Aprende a tu ritmo</span></div><span class="schedule-pill">Sábados y domingos</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container py-5 text-center">
+        <span class="eyebrow text-white-50">TU PRIMERA BRAZADA EMPIEZA AQUÍ</span>
+        <h2 class="text-white mt-2">¿Listo para sumergirte en algo nuevo?</h2>
+        <p class="text-white-50 mb-4">Completa el formulario y da el primer paso con AquaVida.</p>
+        <a class="btn btn-light btn-lg" asp-controller="Inscripciones" asp-action="Crear">Comenzar inscripción →</a>
+    </div>
+</section>

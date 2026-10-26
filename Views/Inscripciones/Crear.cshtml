@@ -1,0 +1,41 @@
+@model AquaVida.Models.Inscripcion
+@{
+    ViewData["Title"] = "Inscripción";
+}
+
+<section class="form-page section-padding">
+    <div class="container">
+        <div class="row justify-content-center g-0">
+            <div class="col-lg-5 form-intro">
+                <span class="eyebrow text-white-50">EMPIEZA TU CAMINO</span>
+                <h1 class="display-5 fw-bold mt-3">Tu próxima aventura comienza aquí.</h1>
+                <p class="mt-3 text-white-50">Cuéntanos un poco sobre ti y elige el programa que mejor se adapta a tu experiencia.</p>
+                <div class="form-promise mt-5"><span>✓</span> Formulario sencillo</div>
+                <div class="form-promise"><span>✓</span> Niveles para distintas experiencias</div>
+                <div class="form-promise"><span>✓</span> Confirmación al enviar</div>
+            </div>
+            <div class="col-lg-7 form-panel">
+                <h2 class="h3 fw-bold">Formulario de inscripción</h2>
+                <p class="text-secondary mb-4">Los campos marcados son obligatorios.</p>
+                <form asp-controller="Inscripciones" asp-action="Crear" method="post" id="inscripcionForm">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                    <div class="row g-3">
+                        <div class="col-12"><label asp-for="Nombre" class="form-label"></label><input asp-for="Nombre" class="form-control" placeholder="Ej. María Pérez" autocomplete="name" /><span asp-validation-for="Nombre" class="field-error"></span></div>
+                        <div class="col-md-6"><label asp-for="Documento" class="form-label"></label><input asp-for="Documento" class="form-control" placeholder="Número de documento" /><span asp-validation-for="Documento" class="field-error"></span></div>
+                        <div class="col-md-6"><label asp-for="Edad" class="form-label"></label><input asp-for="Edad" class="form-control" type="number" min="4" max="100" placeholder="Edad" /><span asp-validation-for="Edad" class="field-error"></span></div>
+                        <div class="col-12"><label asp-for="Correo" class="form-label"></label><input asp-for="Correo" class="form-control" type="email" placeholder="tunombre@correo.com" autocomplete="email" /><span asp-validation-for="Correo" class="field-error"></span></div>
+                        <div class="col-md-6"><label asp-for="Nivel" class="form-label"></label><select asp-for="Nivel" class="form-select"><option value="">Selecciona una opción</option><option>Principiante</option><option>Intermedio</option><option>Avanzado</option></select><span asp-validation-for="Nivel" class="field-error"></span></div>
+                        <div class="col-md-6"><label asp-for="Horario" class="form-label"></label><select asp-for="Horario" class="form-select"><option value="">Selecciona un horario</option><option>Mañana</option><option>Tarde</option><option>Fin de semana</option></select><span asp-validation-for="Horario" class="field-error"></span></div>
+                        <div class="col-12"><label asp-for="Comentarios" class="form-label"></label><textarea asp-for="Comentarios" class="form-control" rows="3" placeholder="Cuéntanos si tienes alguna pregunta (opcional)"></textarea><span asp-validation-for="Comentarios" class="field-error"></span></div>
+                        <div class="col-12"><div class="form-check"><input class="form-check-input" type="checkbox" id="acepto" required /><label class="form-check-label small" for="acepto">Confirmo que la información ingresada es correcta.</label></div></div>
+                        <div class="col-12 mt-4"><button class="btn btn-aqua btn-lg w-100" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button><p class="small text-secondary mt-3 mb-0">Demostración académica: esta versión no almacena permanentemente los datos enviados.</p></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

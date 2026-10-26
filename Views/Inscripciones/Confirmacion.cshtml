@@ -1,0 +1,29 @@
+@model AquaVida.Models.Inscripcion
+@{
+    ViewData["Title"] = "Solicitud recibida";
+}
+
+<section class="section-padding confirmation-page">
+    <div class="container">
+        <div class="confirmation-card mx-auto">
+            <div class="confirmation-check">✓</div>
+            <span class="eyebrow">AQUAVIDA</span>
+            <h1 class="display-6 fw-bold mt-2">¡Gracias, @Model.Nombre!</h1>
+            <p class="text-secondary">Tu formulario fue recibido y los datos pasaron las validaciones del sistema.</p>
+            <div class="confirmation-details text-start">
+                <h2 class="h5 mb-3">Resumen de tu solicitud</h2>
+                <div class="detail-row"><span>Documento</span><strong>@Model.Documento</strong></div>
+                <div class="detail-row"><span>Edad</span><strong>@Model.Edad años</strong></div>
+                <div class="detail-row"><span>Correo</span><strong>@Model.Correo</strong></div>
+                <div class="detail-row"><span>Nivel</span><strong>@Model.Nivel</strong></div>
+                <div class="detail-row"><span>Horario</span><strong>@Model.Horario</strong></div>
+                @if (!string.IsNullOrWhiteSpace(Model.Comentarios))
+                {
+                    <div class="detail-row"><span>Comentarios</span><strong>@Model.Comentarios</strong></div>
+                }
+            </div>
+            <div class="alert alert-info text-start small mt-4">Esta es una confirmación de demostración. La solicitud no se guarda en una base de datos ni representa una matrícula oficial.</div>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-aqua mt-2">Volver al inicio</a>
+        </div>
+    </div>
+</section>
